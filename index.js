@@ -19,7 +19,6 @@ increases the ranks in all of the .ranked-lists by n.
 
 function increaseRankBy(n)
 {
-<<<<<<< HEAD
   // get all li items from .ranked-list tags
   var rankedList = document.querySelectorAll('.ranked-list li')
   
@@ -34,9 +33,6 @@ function increaseRankBy(n)
     // write the new value to the DOM
     item.innerHTML = number.toString()
   })
-=======
-  var rankedList = document.getElementsById()
->>>>>>> 04ba4ca3f0a50b00cb1c12c07aa8b8382657fce6
 }
 
 /*
@@ -48,41 +44,25 @@ ability!)
 
 function deepestChild()
 {
-  var nodeToCheck = document.querySelector('div#grand-node').querySelectorAll('div')
+  var startingPosition = document.querySelector('div#grand-node')
   
-  // lets iterate through and see if we can find the deepest nested grand-node
-  // we need some place holders
+  // lets make a list of all the div tags nested within
+  var arrayToCheck = startingPosition.querySelectorAll('div')
+  
   var hasChild = true
-  var count = 0
   
-  /*
-  while we haven't found the deepest node
-  check if the current node has children
-  if it does, set variable and check the next node
-  if it doesn't we may have found the deepest node
-  */
+  var count = 0
   
   while(hasChild)
   {
-    var x = nodeToCheck[count].querySelector('div').length
-    if(x > 0)
-    { 
-      // increment the counter
+    if(arrayToCheck[0].querySelectorAll('div').length > 0)
+    {
       count++
-      // the node has a child
-      hasChild = true
-      // make this node the next node to be checked
-      nodeToCheck = nodeToCheck[count].querySelector('div')
-
     }
     else
     {
-      // the node does not have a child!!
       hasChild = false
-      
-      
     }
   }
-  // set outgoing return
-      return nodeToCheck[count]
+  return arrayToCheck[count]
 }
