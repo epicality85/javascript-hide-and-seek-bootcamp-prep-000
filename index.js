@@ -19,6 +19,7 @@ increases the ranks in all of the .ranked-lists by n.
 
 function increaseRankBy(n)
 {
+<<<<<<< HEAD
   // get all li items from .ranked-list tags
   var rankedList = document.querySelectorAll('.ranked-list li')
   
@@ -33,6 +34,9 @@ function increaseRankBy(n)
     // write the new value to the DOM
     item.innerHTML = number.toString()
   })
+=======
+  var rankedList = document.getElementsById()
+>>>>>>> 04ba4ca3f0a50b00cb1c12c07aa8b8382657fce6
 }
 
 /*
