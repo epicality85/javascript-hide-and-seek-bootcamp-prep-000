@@ -19,7 +19,13 @@ increases the ranks in all of the .ranked-lists by n.
 
 function increaseRankBy(n)
 {
+  var rankedList = document.querySelectorAll('.ranked-list li')
   
+  rankedList.forEach(function(item){
+    var number = parseInt(item.innerHTML)
+    number += n
+    item.innerHTML = number.toString()
+  })
 }
 
 /*
