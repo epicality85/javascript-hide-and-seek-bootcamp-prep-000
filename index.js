@@ -60,30 +60,25 @@ function deepestChild()
   
   while(hasChild)
   {
-    if(nodeToCheck[count].querySelector('div').length > 0)
-    {
-      // the node has a child
-      hasChild = true
+    var x = nodeToCheck[count].querySelector('div').length
+    if(x > 0)
+    { 
       // increment the counter
       count++
+      // the node has a child
+      hasChild = true
       // make this node the next node to be checked
-      nodeToCheck = nodeToCheck[count]
+      nodeToCheck = nodeToCheck[count].querySelector('div')
+
     }
     else
     {
       // the node does not have a child!!
       hasChild = false
       
-      // set outgoing return
-      nodeToCheck = nodeToCheck[count]
+      
     }
   }
-  
-  
-  
-  
-  
-  
-  
-  return nodeToCheck
+  // set outgoing return
+      return nodeToCheck[count]
 }
