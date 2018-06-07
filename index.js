@@ -55,7 +55,7 @@ function deepestChild()
   
   while(hasChild)
   {
-    if(arrayToCheck[0].querySelectorAll('div').length > 0)
+    if(arrayToCheck[count].querySelectorAll('div').length > 0)
     {
       count++
     }
