@@ -19,11 +19,18 @@ increases the ranks in all of the .ranked-lists by n.
 
 function increaseRankBy(n)
 {
+  // get all li items from .ranked-list tags
   var rankedList = document.querySelectorAll('.ranked-list li')
   
+  // iterate through the list that has been created using 'forEach'
   rankedList.forEach(function(item){
+    // number variable to make from the list items
     var number = parseInt(item.innerHTML)
+    
+    // increment by n
     number += n
+    
+    // write the new value to the DOM
     item.innerHTML = number.toString()
   })
 }
@@ -37,5 +44,46 @@ ability!)
 
 function deepestChild()
 {
+  var nodeToCheck = document.querySelector('div#grand-node').querySelectorAll('div')
   
+  // lets iterate through and see if we can find the deepest nested grand-node
+  // we need some place holders
+  var hasChild = true
+  var count = 0
+  
+  /*
+  while we haven't found the deepest node
+  check if the current node has children
+  if it does, set variable and check the next node
+  if it doesn't we may have found the deepest node
+  */
+  
+  while(hasChild)
+  {
+    if(nodeToCheck[count].querySelector('div').length > 0)
+    {
+      // the node has a child
+      hasChild = true
+      // increment the counter
+      count++
+      // make this node the next node to be checked
+      nodeToCheck = nodeToCheck[count]
+    }
+    else
+    {
+      // the node does not have a child!!
+      hasChild = false
+      
+      // set outgoing return
+      nodeToCheck = nodeToCheck[count]
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  return nodeToCheck
 }
