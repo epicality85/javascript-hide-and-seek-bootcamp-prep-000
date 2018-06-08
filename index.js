@@ -23,7 +23,8 @@ function increaseRankBy(n)
   var rankedList = document.querySelectorAll('.ranked-list li')
   
   // iterate through the list that has been created using 'forEach'
-  rankedList.forEach(function(item){
+  rankedList.forEach(function(item)
+  {
     // number variable to make from the list items
     var number = parseInt(item.innerHTML)
     
